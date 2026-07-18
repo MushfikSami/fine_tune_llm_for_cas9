@@ -1,0 +1,55 @@
+# ------------------------------------------------------------------
+# Data (large downloads + generated artifacts) — regenerate via scripts.
+# Ignore directory *contents* but keep the skeleton via .gitkeep.
+# ------------------------------------------------------------------
+# MSU genome FASTA (all.con ~382 MB) + all.gff3
+/data/msu_raw/*
+# Doench CSV + tokenized HuggingFace Arrow datasets
+/data/processed/*
+# bowtie2 index (rice_msu7.*.bt2)
+/data/index/*
+
+# ------------------------------------------------------------------
+# Model weights / training artifacts
+# ------------------------------------------------------------------
+/models/dnabert_lora/*
+# Trainer checkpoints/output
+**/_trainer/
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+
+# ------------------------------------------------------------------
+# Pipeline outputs
+# ------------------------------------------------------------------
+designed_sgrnas.csv
+designed_sgrnas.html
+
+# ------------------------------------------------------------------
+# Python
+# ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# ------------------------------------------------------------------
+# HuggingFace / caches / experiment tracking
+# ------------------------------------------------------------------
+.cache/
+wandb/
+
+# ------------------------------------------------------------------
+# OS / editor
+# ------------------------------------------------------------------
+.DS_Store
+*.swp
+.vscode/
+.idea/
+.claude/
+
+# Keep directory skeletons regardless of the rules above
+!**/.gitkeep

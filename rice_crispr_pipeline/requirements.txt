@@ -1,0 +1,18 @@
+# Core ML stack
+torch
+# DNABERT-2 ships custom modeling code written for the transformers 4.x API
+# (transformers 5.x removed the implicit config.pad_token_id default it relies on).
+transformers>=4.44,<5
+datasets
+accelerate
+peft
+
+# Bioinformatics / data
+biopython
+pandas
+scikit-learn
+
+# DNABERT-2 custom model runtime + utilities
+einops
+requests
+tqdm
